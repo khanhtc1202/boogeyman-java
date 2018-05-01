@@ -8,6 +8,23 @@ public class ResultList {
 	
 	private ArrayList<ResultItem> resultList;
 	
+	public ResultList(ArrayList<ResultItem> resultList) {
+		this.resultList = resultList;
+	}
+	
+	public ResultList() {
+		ArrayList<ResultItem> l = new ArrayList<ResultItem>();
+		this.resultList = l;
+	}
+
+	public ArrayList<ResultItem> getResultList() {
+		return resultList;
+	}
+
+	public void setResultList(ArrayList<ResultItem> resultList) {
+		this.resultList = resultList;
+	}
+
 	public void add(ResultItem item) {
 		resultList.add(item);
 	}

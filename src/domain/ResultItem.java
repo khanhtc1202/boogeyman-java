@@ -29,6 +29,22 @@ public class ResultItem {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
+	@Override
+	public int hashCode() {
+		return (this.tiltle.hashCode()+this.url.hashCode()+this.description.hashCode());
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof ResultItem) {
+			ResultItem temp = (ResultItem)obj;
+			if(this.tiltle == temp.tiltle && this.url==temp.url && this.description == temp.description) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	
 	

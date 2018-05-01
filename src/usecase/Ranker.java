@@ -21,7 +21,7 @@ public class Ranker {
 
 	}
 	
-	public ResultList getNoStrategy(ResultList[] resultLists) {
+	public ResultList getNoStrategyList(ResultList[] resultLists) {
 		ResultList rankedResultList = new ResultList();
 		for(ResultList rl:resultLists) {
 			rankedResultList.addAll(rl);

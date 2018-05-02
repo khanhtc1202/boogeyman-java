@@ -1,5 +1,8 @@
 package usecase;
 
+import java.util.ArrayList;
+
+import domain.ResultItem;
 import domain.ResultList;
 
 public class Ranker {
@@ -9,14 +12,23 @@ public class Ranker {
 		for(ResultList rl : resultLists) {
 			rankedResultList.add(rl.getTopResultItem());
 		}
+		rankedResultList.removeDuplicate();
 		return rankedResultList;
 	}
 	
 	public ResultList getCrossList(ResultList[] resultLists) {
-		ResultList rankedResultList = new ResultList();
+		ArrayList<ResultItem> resultList = null;
 		for(ResultList rl : resultLists) {
-			
+			System.out.println(rl.getResultList().size());
+			if(resultList == null) {
+				resultList = rl.getResultList();
+				System.out.println(resultList.size());
+			}else {
+				resultList.retainAll(rl.getResultList());
+				System.out.println(resultList.size()+"aaaaaaa");
+			}
 		}
+		ResultList rankedResultList = new ResultList(resultList);
 		return rankedResultList;
 
 	}

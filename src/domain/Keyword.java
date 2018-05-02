@@ -8,7 +8,7 @@ public class Keyword {
 	}
 
 	public void setKeyword(String keyword) {
-		keyword = keyword;
+		this.keyword = keyword;
 	}
 	
 }

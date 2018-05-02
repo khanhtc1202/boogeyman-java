@@ -4,13 +4,27 @@ public class ResultItem {
 	private String tiltle;
 	private String description;
 	private String url;
+	private String searchEngine;
 	
-	public ResultItem(String tiltle, String description, String url) {
+	public ResultItem(String tiltle, String description, String url, String searchEngine) {
 		this.tiltle = tiltle;
 		this.description = description;
 		this.url = url;
+		this.searchEngine = searchEngine;
 	}
 	
+	public ResultItem() {
+		String searchEngine = new String();
+		String tiltle = new String();
+		String description = new String();
+		String url = new String();
+
+		this.tiltle = tiltle;
+		this.description = description;
+		this.url = url;
+		this.searchEngine = searchEngine;
+	}
+
 	public String getTiltle() {
 		return tiltle;
 	}

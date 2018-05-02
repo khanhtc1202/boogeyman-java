@@ -24,11 +24,11 @@ public class ResultList_Test {
 	}
 
 	public ResultList initNewList() {
-		ResultItem i1 = new ResultItem("til1", "des1", "url1");
-		ResultItem i2 = new ResultItem("til2", "des2", "url2");
-		ResultItem i3 = new ResultItem("til3", "des3", "url3");
-		ResultItem i4 = new ResultItem("til1", "des1", "url1");
-		ResultItem i5 = new ResultItem("til1", "des1", "url1");
+		ResultItem i1 = new ResultItem("til1", "des1", "url1","google");
+		ResultItem i2 = new ResultItem("til2", "des2", "url2","google");
+		ResultItem i3 = new ResultItem("til3", "des3", "url3","google");
+		ResultItem i4 = new ResultItem("til1", "des1", "url1","google");
+		ResultItem i5 = new ResultItem("til1", "des1", "url1","google");
 		ResultList list = new ResultList();
 		
 		list.add(i1);

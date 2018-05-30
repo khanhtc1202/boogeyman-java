@@ -7,7 +7,7 @@ import domain.ResultList;
 
 public class Ranker {
 		
-	public ResultList getTopList(ResultList[] resultLists) {
+	public ResultList getTopList(ArrayList<ResultList> resultLists) {
 		ResultList rankedResultList = new ResultList();
 		for(ResultList rl : resultLists) {
 			rankedResultList.add(rl.getTopResultItem());
@@ -16,24 +16,15 @@ public class Ranker {
 		return rankedResultList;
 	}
 	
-	public ResultList getCrossList(ResultList[] resultLists) {
-		ArrayList<ResultItem> resultList = null;
-		for(ResultList rl : resultLists) {
-			System.out.println(rl.getResultList().size());
-			if(resultList == null) {
-				resultList = rl.getResultList();
-				System.out.println(resultList.size());
-			}else {
-				resultList.retainAll(rl.getResultList());
-				System.out.println(resultList.size()+"aaaaaaa");
-			}
+	public ResultList getCrossList(ArrayList<ResultList> resultLists) {
+		ResultList rankedResultList = new ResultList();
+		for(ResultList rl:resultLists) {
+			rankedResultList.addAll(rl);
 		}
-		ResultList rankedResultList = new ResultList(resultList);
-		return rankedResultList;
-
+		return rankedResultList.getDuplicate();
 	}
 	
-	public ResultList getNoStrategyList(ResultList[] resultLists) {
+	public ResultList getNoStrategyList(ArrayList<ResultList> resultLists) {
 		ResultList rankedResultList = new ResultList();
 		for(ResultList rl:resultLists) {
 			rankedResultList.addAll(rl);

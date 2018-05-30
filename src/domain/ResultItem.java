@@ -25,6 +25,14 @@ public class ResultItem {
 		this.searchEngine = searchEngine;
 	}
 
+	public String getSearchEngine() {
+		return searchEngine;
+	}
+
+	public void setSearchEngine(String searchEngine) {
+		this.searchEngine = searchEngine;
+	}
+
 	public String getTiltle() {
 		return tiltle;
 	}

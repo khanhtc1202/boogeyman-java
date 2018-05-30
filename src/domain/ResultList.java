@@ -34,11 +34,31 @@ public class ResultList {
 	}
 	
 	public void removeDuplicate() {
-		Set<ResultItem> s = new HashSet<ResultItem>(resultList);
-		resultList.clear();
-		resultList.addAll(s);
+		ArrayList<String> urlList = new ArrayList<>();
+		ResultList list = new ResultList();
+		for (ResultItem item : resultList){
+			if(!urlList.contains(item.getUrl())){
+				urlList.add(item.getUrl());
+				list.add(item);
+			}
+		}
+		resultList = list.getResultList();
 	}
-	
+
+	public ResultList getDuplicate(){
+		ArrayList<String> urlList = new ArrayList<>();
+		ResultList list = new ResultList();
+		for (ResultItem item : resultList){
+			if(!urlList.contains(item.getUrl())){
+				urlList.add(item.getUrl());
+			}else {
+				list.add(item);
+			}
+		}
+		list.removeDuplicate();
+		return list;
+	}
+
 	public void addAll(ResultList r) {
 		resultList.addAll(r.resultList);
 	}
